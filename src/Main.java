@@ -1,6 +1,3 @@
-import javax.swing.text.Position;
-import java.io.IOException;
-import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -84,6 +81,13 @@ public class Main {
             }
 
             if (!player.isAlive() || !enemy.isAlive() || isBaseDestroyed) {
+                if (isBaseDestroyed) {
+                    System.out.println("Base destroyed");
+                } else if (!player.isAlive()) {
+                    System.out.println("Player destroyed");
+                } else if (!enemy.isAlive()) {
+                    System.out.println("Enemy destroyed");
+                }
                 System.out.println("GAME OVER");
                 System.exit(0);
             }
